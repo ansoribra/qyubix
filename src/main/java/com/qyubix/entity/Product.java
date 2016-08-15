@@ -13,7 +13,7 @@ public class Product {
     @Id @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-//inilah ini ini
+
     @NotNull
     @Size(min = 1)
     private String product_mart_id;
