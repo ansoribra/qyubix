@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 public class Product {
@@ -15,24 +14,104 @@ public class Product {
     private String id;
 
     @NotNull
-    @Size(min = 1)
+
     private String product_mart_id;
 
     @NotNull
-    @Size(min = 1)
+
     private String product_name;
 
     @NotNull
-    @Size(min = 1)
+
     private String product_category;
 
     @NotNull
-    @Size(min = 1)
+
     private int product_price;
 
     private String product_description;
-    private String product_sold;
+    private int product_sold;
     private int product_rating;
     private int product_discount;
     private int product_discount_after;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getProduct_mart_id() {
+        return product_mart_id;
+    }
+
+    public void setProduct_mart_id(String product_mart_id) {
+        this.product_mart_id = product_mart_id;
+    }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public String getProduct_category() {
+        return product_category;
+    }
+
+    public void setProduct_category(String product_category) {
+        this.product_category = product_category;
+    }
+
+    public int getProduct_price() {
+        return product_price;
+    }
+
+    public void setProduct_price(int product_price) {
+        this.product_price = product_price;
+    }
+
+    public String getProduct_description() {
+        return product_description;
+    }
+
+    public void setProduct_description(String product_description) {
+        this.product_description = product_description;
+    }
+
+    public int getProduct_sold() {
+        return product_sold;
+    }
+
+    public void setProduct_sold(int product_sold) {
+        this.product_sold = product_sold;
+    }
+
+    public int getProduct_rating() {
+        return product_rating;
+    }
+
+    public void setProduct_rating(int product_rating) {
+        this.product_rating = product_rating;
+    }
+
+    public int getProduct_discount() {
+        return product_discount;
+    }
+
+    public void setProduct_discount(int product_discount) {
+        this.product_discount = product_discount;
+    }
+
+    public int getProduct_discount_after() {
+        return product_discount_after;
+    }
+
+    public void setProduct_discount_after(int product_discount_after) {
+        this.product_discount_after = product_discount_after;
+    }
 }
