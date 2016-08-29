@@ -2,7 +2,7 @@ package com.qyubix.dao;
 
 import com.github.javafaker.Faker;
 import com.qyubix.QyubixApplication;
-import com.qyubix.entity.Social;
+import com.qyubix.entity.Post;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = QyubixApplication.class)
-public class SocialTest {
+public class PostTest {
 
     @Autowired
     private SocialDao social;
@@ -22,7 +22,7 @@ public class SocialTest {
         for(int i = 0; i<100;i++) {
             try {
                 Faker faker = new Faker();
-                Social s = new Social();
+                Post s = new Post();
                 s.setPost_date(faker.date().past(99999, TimeUnit.DAYS));
                 s.setPost_author(faker.name().fullName());
                 s.setPost_content(faker.chuckNorris().fact());
