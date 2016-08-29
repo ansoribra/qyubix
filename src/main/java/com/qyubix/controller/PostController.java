@@ -19,7 +19,7 @@ public class PostController {
     private PostDao post;
 
     //GET METHOD========================================================================================================
-    @RequestMapping("/post")
+    @RequestMapping(value = "/post",method = RequestMethod.GET)
     public Page<Post> getAllPost(Pageable page){
         return post.findAll(page);
     }

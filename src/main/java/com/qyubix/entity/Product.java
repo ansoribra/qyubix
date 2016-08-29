@@ -15,7 +15,7 @@ public class Product {
 
     @NotNull
 
-    private String product_mart_id;
+    private String product_store_id;
 
     @NotNull
 
@@ -43,12 +43,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getProduct_mart_id() {
-        return product_mart_id;
+    public String getProduct_store_id() {
+        return product_store_id;
     }
 
-    public void setProduct_mart_id(String product_mart_id) {
-        this.product_mart_id = product_mart_id;
+    public void setProduct_store_id(String product_store_id) {
+        this.product_store_id = product_store_id;
     }
 
     public String getProduct_name() {

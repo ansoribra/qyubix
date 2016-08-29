@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class PostTest {
 
     @Autowired
-    private SocialDao social;
+    private PostDao post;
 
     @Test
     public void testInsert() {
@@ -27,7 +27,7 @@ public class PostTest {
                 s.setPost_author(faker.name().fullName());
                 s.setPost_content(faker.chuckNorris().fact());
                 s.setPost_link(faker.company().logo());
-                social.save(s);
+                post.save(s);
             }catch (Exception ex){
                 continue;
             }
