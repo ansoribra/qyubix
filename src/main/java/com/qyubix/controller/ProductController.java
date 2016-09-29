@@ -17,9 +17,12 @@ public class ProductController {
     private ProductDao product;
 
     //GET METHOD========================================================================================================
+
+    @CrossOrigin
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Page<Product> getAllProduct(Pageable page){
+
         return product.findAll(page);
     }
 
@@ -88,6 +91,7 @@ public class ProductController {
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin
     public ResponseEntity<Product> findById(@PathVariable("id") String id){
         Product idResult = product.findOne(id);
         if(idResult==null){

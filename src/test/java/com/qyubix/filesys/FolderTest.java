@@ -45,9 +45,8 @@ public class FolderTest {
 
     Random random = new Random();
 
-
     @Test
-    public void testInsert() throws IOException {
+    public void createFolder() throws IOException {
         FileUtils.deleteDirectory(new File(images));
         for (Store model:store.findAll()) {
             System.out.println(model.getStore_id());
@@ -57,7 +56,7 @@ public class FolderTest {
     }
 
     @Test
-    public void testCopy() throws IOException, SQLException {
+    public void uploadImage() throws IOException, SQLException {
         for (Product model:product.findAll()) {
 
             String mId       = model.getId();
