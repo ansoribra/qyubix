@@ -1,10 +1,13 @@
-A:\qyubix\src\main\java\com\qyubix\dao\SocialDao.java
-A:\qyubix\src\main\java\com\qyubix\entity\Social.java
-A:\qyubix\src\main\java\com\qyubix\entity\User.java
-A:\qyubix\src\main\java\com\qyubix\entity\Product.java
-A:\qyubix\src\main\java\com\qyubix\controller\ProductController.java
-A:\qyubix\src\main\java\com\qyubix\dao\UserDao.java
-A:\qyubix\src\main\java\com\qyubix\dao\ProductDao.java
-A:\qyubix\src\main\java\com\qyubix\entity\Store.java
-A:\qyubix\src\main\java\com\qyubix\dao\StoreDao.java
-A:\qyubix\src\main\java\com\qyubix\QyubixApplication.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\entity\User.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\dao\PostDao.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\dao\StoreDao.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\ProductController.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\StoreController.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\UserController.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\QyubixApplication.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\dao\ProductDao.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\entity\Post.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\entity\Store.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\dao\UserDao.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\PostController.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\entity\Product.java

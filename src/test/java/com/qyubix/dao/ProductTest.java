@@ -35,7 +35,7 @@ public class ProductTest {
                     Faker faker = new Faker();
                     Product p = new Product();
                     p.setProduct_category(faker.commerce().department());
-                    p.setProduct_description(faker.lorem().paragraph());
+                    p.setProduct_description(faker.lorem().paragraph(50));
                     p.setProduct_discount(faker.number().numberBetween(1, 70));
                     p.setProduct_name(faker.commerce().productName());
                     p.setProduct_price(faker.number().numberBetween(5000, 999999999));
@@ -43,6 +43,7 @@ public class ProductTest {
                     p.setProduct_sold(faker.number().numberBetween(1, 9999999));
                     p.setProduct_discount_after(p.getProduct_price() / (100 * p.getProduct_discount()));
                     p.setProduct_store_id(model.getStore_id());
+                    p.setProduct_image_total(faker.number().numberBetween(1, 10));
                     product.save(p);
                 } catch (Exception ex) {
                     continue;

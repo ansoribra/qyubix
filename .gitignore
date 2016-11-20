@@ -1,6 +1,8 @@
 *.iml
 .idea/*
 /src/main/resources/public/
+images/*
+fakeimages/*
 .idea/
 target/classes/public/fakeimages/books/10.jpg
 target/classes/public/fakeimages/books/6.jpg
@@ -66,3 +68,15 @@ target/classes/public/fakeimages/sport/9.jpg
 target/classes/public/images/
 target/generated-sources/
 target/generated-test-sources/
+bigCarousel/
+fakeimages/
+images/
+target/classes/public/00f33999-4461-4c37-a126-5e98c5c57dfd.jpg
+target/images.tar
+target/images.tar.gz
+target/images/
+target/maven-archiver/
+target/qyubix-0.0.1-SNAPSHOT.jar
+target/qyubix-0.0.1-SNAPSHOT.jar.original
+target/surefire-reports/
+target/surefire/

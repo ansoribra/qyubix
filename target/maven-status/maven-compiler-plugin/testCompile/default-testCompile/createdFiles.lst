@@ -1,0 +1,6 @@
+com\qyubix\dao\StoreTest.class
+com\qyubix\dao\UserTest.class
+com\qyubix\dao\ProductTest.class
+com\qyubix\QyubixApplicationTests.class
+com\qyubix\filesys\FolderTest.class
+com\qyubix\dao\PostTest.class

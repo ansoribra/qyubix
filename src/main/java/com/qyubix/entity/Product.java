@@ -14,21 +14,18 @@ public class Product {
     private String id;
 
     @NotNull
-
     private String product_store_id;
 
     @NotNull
-
     private String product_name;
 
     @NotNull
-
     private String product_category;
 
     @NotNull
-
     private int product_price;
 
+    private int product_image_total;
     private String product_description;
     private int product_sold;
     private int product_rating;
@@ -113,5 +110,13 @@ public class Product {
 
     public void setProduct_discount_after(int product_discount_after) {
         this.product_discount_after = product_discount_after;
+    }
+
+    public int getProduct_image_total() {
+        return product_image_total;
+    }
+
+    public void setProduct_image_total(int product_image_total) {
+        this.product_image_total = product_image_total;
     }
 }

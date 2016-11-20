@@ -22,15 +22,17 @@ public class ProductController {
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Page<Product> getAllProduct(Pageable page){
-
         return product.findAll(page);
     }
 
-    @RequestMapping(value = "/product", params = "product_category", method = RequestMethod.GET)
+    @CrossOrigin
+    @RequestMapping(value = "/product", params = {"product_category","size","page"}, method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public Page<Product> findByCategory(@RequestParam("product_category") String productCategory) {
-        PageRequest page = new PageRequest(0, 5);
-        return product.findByProductCategory(productCategory, page);
+    public Page<Product> findByCategory(@RequestParam("product_category") String productCategory,
+                                        @RequestParam("size") String size,
+                                        @RequestParam("page") String page) {
+        PageRequest reqpage = new PageRequest(Integer.parseInt(page),Integer.parseInt(size));
+        return product.findByProductCategory(productCategory, reqpage);
     }
 
     @RequestMapping(value = "/product", params = "product_discount", method = RequestMethod.GET)
@@ -54,11 +56,14 @@ public class ProductController {
         return product.findByProductStoreId(productStoreId, page);
     }
 
-    @RequestMapping(value = "/product", params = "product_name", method = RequestMethod.GET)
+    @RequestMapping(value = "/product", params = {"product_name","size","page"}, method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public Page<Product> findByName(@RequestParam("product_name") String productName){
-        PageRequest page = new PageRequest(0,5);
-        return product.findByProductName(productName, page);
+    @CrossOrigin
+    public Page<Product> findByName(@RequestParam("product_name") String productName,
+                                    @RequestParam("size") String size,
+                                    @RequestParam("page") String page){
+        PageRequest reqpage = new PageRequest(Integer.parseInt(page),Integer.parseInt(size));
+        return product.findByProductName(productName, reqpage);
     }
 
     @RequestMapping(value = "/product", params = "product_price", method = RequestMethod.GET)
@@ -87,6 +92,14 @@ public class ProductController {
     public Page<Product> findByDescription(@RequestParam("product_description") String productDescription){
         PageRequest page = new PageRequest(0,5);
         return product.findByProductDescription(productDescription, page);
+    }
+
+    @RequestMapping(value = "/product", params = "product_image_total", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin
+    public Page<Product> findByImageTotal(@RequestParam("product_image_total") int productImageTotal){
+        PageRequest page = new PageRequest(0,5);
+        return product.findByProductImageTotal(productImageTotal, page);
     }
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)

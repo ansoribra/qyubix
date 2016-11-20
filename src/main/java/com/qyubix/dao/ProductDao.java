@@ -35,4 +35,8 @@ public interface ProductDao extends PagingAndSortingRepository<Product,String> {
 
     @Query("select x from Product x where x.product_sold = :a")
     public Page<Product> findByProductSold(@Param("a") int productSold, Pageable page);
+
+
+    @Query("select x from Product x where x.product_image_total = :a")
+    public Page<Product> findByProductImageTotal(@Param("a") int productImageTotal, Pageable page);
 }
