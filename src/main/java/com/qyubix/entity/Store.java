@@ -1,5 +1,6 @@
 package com.qyubix.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -48,6 +49,10 @@ public class Store {
 
     private int store_star;
     private int store_risk;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonBackReference
+    private User store_user_id;
 
     public String getId() {
         return id;
@@ -167,5 +172,13 @@ public class Store {
 
     public void setStore_risk(int store_risk) {
         this.store_risk = store_risk;
+    }
+
+    public User getStore_user_id() {
+        return store_user_id;
+    }
+
+    public void setStore_user_id(User store_user_id) {
+        this.store_user_id = store_user_id;
     }
 }

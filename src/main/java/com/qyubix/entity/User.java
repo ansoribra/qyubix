@@ -1,36 +1,31 @@
 package com.qyubix.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 import javax.validation.constraints.Past;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-public class User {
+public class User{
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
-    @NotNull
     @Column(unique = true)
     private String user_name;
 
     @Email
-    @NotNull
     private String user_email;
 
-    @NotNull
+
     private String user_password;
 
-    @NotNull
     @Past
     private Date user_birth;
 
@@ -39,6 +34,11 @@ public class User {
     private Date user_last_login;
     private String user_activity;
     private int user_star;
+    private String user_role;
+
+    @OneToMany(mappedBy = "store_user_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Store> user_store_id;
 
     public String getId() {
         return id;
@@ -118,5 +118,21 @@ public class User {
 
     public void setUser_star(int user_star) {
         this.user_star = user_star;
+    }
+
+    public String getUser_role() {
+        return user_role;
+    }
+
+    public void setUser_role(String user_role) {
+        this.user_role = user_role;
+    }
+
+    public List<Store> getUser_store_id() {
+        return user_store_id;
+    }
+
+    public void setUser_store_id(List<Store> user_store_id) {
+        this.user_store_id = user_store_id;
     }
 }

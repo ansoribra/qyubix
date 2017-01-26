@@ -1,8 +1,11 @@
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\entity\User.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\config\RestConfiguration.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\config\JwtFilter.java
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\dao\PostDao.java
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\dao\StoreDao.java
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\ProductController.java
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\StoreController.java
+A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\WebSecurityConfig.java
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\controller\UserController.java
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\QyubixApplication.java
 A:\Qyubix versioning\qyubix\src\main\java\com\qyubix\dao\ProductDao.java

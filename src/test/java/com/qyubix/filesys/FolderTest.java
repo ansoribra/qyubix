@@ -58,7 +58,6 @@ public class FolderTest {
     @Test
     public void uploadImage() throws IOException, SQLException {
         for (Product model:product.findAll()) {
-
             String mId       = model.getId();
             String mStoreId  = model.getProduct_store_id();
             int mImageTotal = model.getProduct_image_total();

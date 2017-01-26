@@ -35,6 +35,7 @@ public class ProductController {
         return product.findByProductCategory(productCategory, reqpage);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/product", params = "product_discount", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Page<Product> findByDiscount(@RequestParam("product_discount") int productDiscount){
@@ -42,6 +43,7 @@ public class ProductController {
         return product.findByProductDiscount(productDiscount, page);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/product", params = "product_discount_after", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Page<Product> findByDiscountAfter(@RequestParam("product_discount_after") int productDiscountAfter){
@@ -49,6 +51,7 @@ public class ProductController {
         return product.findByProductDiscountAfter(productDiscountAfter, page);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/product", params = "product_store_id", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Page<Product> findByStoreId(@RequestParam("product_store_id") String productStoreId){
@@ -66,6 +69,7 @@ public class ProductController {
         return product.findByProductName(productName, reqpage);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/product", params = "product_price", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Page<Product> findByPrice(@RequestParam("product_price") int productPrice){
@@ -74,21 +78,21 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/product", params = "product_rating", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK) @CrossOrigin
     public Page<Product> findByRating(@RequestParam("product_rating") int productRating){
         PageRequest page = new PageRequest(0,5);
         return product.findByProductRating(productRating, page);
     }
 
     @RequestMapping(value = "/product", params = "product_sold", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK) @CrossOrigin
     public Page<Product> findBySold(@RequestParam("product_sold") int productSold){
         PageRequest page = new PageRequest(0,5);
-        return product.findByProductSold(productSold, page);
+            return product.findByProductSold(productSold, page);
     }
 
     @RequestMapping(value = "/product", params = "product_description", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK) @CrossOrigin
     public Page<Product> findByDescription(@RequestParam("product_description") String productDescription){
         PageRequest page = new PageRequest(0,5);
         return product.findByProductDescription(productDescription, page);
@@ -114,11 +118,11 @@ public class ProductController {
     }
 
     //POST METHOD=======================================================================================================
-    @RequestMapping(value = "/product", method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
-    public void insertNewProduct(@RequestBody Product p){
-        product.save(p);
-    }
+        @RequestMapping(value = "/product", method = RequestMethod.POST)
+        @ResponseStatus(HttpStatus.CREATED)
+        public void insertNewProduct(@RequestBody Product p){
+            product.save(p);
+        }
 
     //PUT METHOD========================================================================================================
     @RequestMapping(value = "/product/{id}", method = RequestMethod.PUT)

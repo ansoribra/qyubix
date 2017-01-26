@@ -27,7 +27,7 @@ public class ProductTest {
         for (Store model:store.findAll()) {
             int hapus=0;
             Random random = new Random();
-            int randomVal = (random.nextInt(7)+1);
+            int randomVal = (random.nextInt(20)+1);
             for(int i =1; i < randomVal;i++) {
                 try {
                     System.out.println("Nilai Random : "+randomVal);
@@ -35,13 +35,14 @@ public class ProductTest {
                     Faker faker = new Faker();
                     Product p = new Product();
                     p.setProduct_category(faker.commerce().department());
-                    p.setProduct_description(faker.lorem().paragraph(50));
+                    p.setProduct_description(faker.lorem().paragraph(3));
                     p.setProduct_discount(faker.number().numberBetween(1, 70));
                     p.setProduct_name(faker.commerce().productName());
                     p.setProduct_price(faker.number().numberBetween(5000, 999999999));
                     p.setProduct_rating(faker.number().numberBetween(1, 10));
                     p.setProduct_sold(faker.number().numberBetween(1, 9999999));
-                    p.setProduct_discount_after(p.getProduct_price() / (100 * p.getProduct_discount()));
+                    double discounthasil= p.getProduct_price()-(((double)p.getProduct_discount() /100)*p.getProduct_price());
+                    p.setProduct_discount_after((int)discounthasil) ;
                     p.setProduct_store_id(model.getStore_id());
                     p.setProduct_image_total(faker.number().numberBetween(1, 10));
                     product.save(p);
